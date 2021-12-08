@@ -100,12 +100,13 @@ jmp .exit
 .L3:
 
 
+	movq	$0, -32(%rbp)
 	leaq	-32(%rbp), %rsi		
 	movq	$ftd, %rdi		
 	movq	$0, %rax			
 	call	scanf					
 	
-	
+	movq	$0, -24(%rbp)
 	leaq	-24(%rbp), %rsi			
 	movq	$ftd, %rdi		
 	xorq	%rax, %rax		
@@ -170,12 +171,13 @@ jmp .exit
 
 	#case 55
 .L5:
-
+	movq	$0, -32(%rbp)
 	leaq	-32(%rbp), %rsi			
 	movq	$ftd, %rdi	
 	movq	$0, %rax				# clear rax.
 	call	scanf					# scan index i.
 
+	movq	$0, -24(%rbp)
 	leaq	-24(%rbp), %rsi			
 	movq	$ftd, %rdi	
 	movq	$0, %rax				

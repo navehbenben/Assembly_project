@@ -131,6 +131,7 @@ swapCase:
 
 	.type	pstrijcmp, @function
 pstrijcmp:
+
 	cmpb	%dl, %cl	
 	jl		.invalid_cmp_func			
 	cmpb	$0,	%dl		
@@ -153,7 +154,7 @@ pstrijcmp:
 .loop_cmp_func:
 	cmpb	%dl, %cl		
 	jl		.break_cmp_func					
-
+	xorq	%r8, %r8
 	movb	0(%rdi), %r8b	
 	cmpb	%r8b,  0(%rsi)
 	jl		.lower_cmp_func				
