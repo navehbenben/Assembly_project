@@ -3,7 +3,6 @@ typedef struct {
 	char str[255];
 } Pstring;
 
-
 char pstrlen(Pstring* pstr);
 
 Pstring* replaceChar(Pstring* pstr, char oldChar, char newChar);
